@@ -77,6 +77,10 @@ window.addEventListener("DOMContentLoaded", function(){ //This function waits un
 
 	function getData(){//function will retrieve data from local storage and display in window
 		toggleControls("on");
+		if(localStorage.length === 0){
+			alert("There is no data in Local Stoarage, default data populated.");
+			autoFillData();
+		};
 		var makeDiv = document.createElement("div");
 		makeDiv.setAttribute("id", "items");
 		var makeList = document.createElement("ul");
@@ -102,6 +106,12 @@ window.addEventListener("DOMContentLoaded", function(){ //This function waits un
 			makeItemLinks(localStorage.key(i), linksLi); 
 		};
 	};
+	function autoFillData(){ //pulls data from json and populates local storage with default data
+		for(var n in json){
+			var id = Math.floor(Math.random() * 132145433);
+			localStorage.setItem(id, JSON.stringify(json[n]));
+		};
+	};	
 
 	function makeItemLinks(key, linksLi){ //creates edit and delete links
 		var editLink = document.createElement("a");
