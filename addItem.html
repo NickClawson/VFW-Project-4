@@ -28,18 +28,16 @@
 						<label for="parkLocation">Park Location:</label><br /></li><!--below creates drop down menu to select at which park the ride is located-->
 					<li>Type of Ride:<!--what kind of ride was it?-->
 						<ul><!--list of radio buttons below; roller coaster checked by default-->
-							<li><input type="radio" checked value="Roller Coaster" id="coaster" name="type"/><Label for="coaster">Roller Coaster</label></li>
-							<li><input type="radio" value="Thrill Ride" id="thrill" name="type" /><Label for="thrill">Thrill Ride</label></li>
-							<li><input type="radio" value="Water Ride" id="water" name="type" /><Label for="water">Water Ride</label></li>
-							<li><input type="radio" value="Haunted House" id="haunted" name="type" /><Label for="haunted">Haunted House</label></li>
-							<li><input type="radio" value="Train" id="train" name="type" /><Label for="train">Train</label></li>
+							<li><input type="radio" checked value="RollerCoaster" id="coaster" name="type"/><Label for="coaster">Roller Coaster</label></li>
+							<li><input type="radio" value="Thrill" id="thrill" name="type" /><Label for="thrill">Thrill Ride</label></li>
+							<li><input type="radio" value="Water" id="water" name="type" /><Label for="water">Water Ride</label></li>
+							<li><input type="radio" value="Haunted" id="haunted" name="type" /><Label for="haunted">Haunted House</label></li>
 							<li><input type="radio" value="Transport" id="transport" name="type" /><Label for="transport">Transport</label></li>
 						</ul>
 					</li>
 					<li><label for="rating">Rating (Scale of 1-10):</label><br /><input type="range" name="rating" id="rating" min="1" max ="10" /></li><!--what did you think of the ride on scale of 1-10-->
 					<li><label for="date">Date of Ride:</label><input type="date" id="date" /></li><!--when did you ride it?-->
 					<li><label for="comments">Additional Comments:</label><br /><textarea id="comments"></textarea></li><!--text box for additional comments-->
-					<li><input type="hidden" value="true" /></li><!--hidden value, nothing iportant returned yet-->
 				</ul>
 			</fieldset>
 			<input type="submit" value="Rate it!" id="submit"/><!--button to submit above form. Does nothing yet-->

@@ -96,6 +96,7 @@ window.addEventListener("DOMContentLoaded", function(){ //This function waits un
 			var rideRating = JSON.parse(value); //converted from local object string to object
 			var makeSubList = document.createElement("ul");
 			makeLi.appendChild(makeSubList);
+			getImage(makeSubList, rideRating.type[1]);
 			for (var n in rideRating){
 				var makeSubLi = document.createElement("li");
 				makeSubList.appendChild(makeSubLi);
@@ -106,6 +107,15 @@ window.addEventListener("DOMContentLoaded", function(){ //This function waits un
 			makeItemLinks(localStorage.key(i), linksLi); 
 		};
 	};
+
+	function getImage(makeSubList, rideType){//determines which image should display depending on category
+		var imageLi = document.createElement("li");
+		makeSubList.appendChild(imageLi);
+		var imageTag = document.createElement("img");
+		var source = imageTag.setAttribute("src", "images/" + rideType +".png");
+		imageLi.appendChild(imageTag);
+	};
+
 	function autoFillData(){ //pulls data from json and populates local storage with default data
 		for(var n in json){
 			var id = Math.floor(Math.random() * 132145433);
@@ -145,19 +155,16 @@ window.addEventListener("DOMContentLoaded", function(){ //This function waits un
 		$("locations").value = item.park[1];
 		var radios = document.forms[0].type;
 		for(var i = 0; i < radios.length; i++){
-			if(radios[i].value == "Roller Coaster" && item.type[1] == "Roller Coaster"){
+			if(radios[i].value == "RollerCoaster" && item.type[1] == "RollerCoaster"){
 				radios[i].setAttribute("checked", "checked");
 			}
-			else if (radios[i].value == "Thrill Ride" && item.type[1] == "Thrill Ride"){
+			else if (radios[i].value == "Thrill" && item.type[1] == "Thrill"){
 				radios[i].setAttribute("checked", "checked");
 			}
-			else if (radios[i].value == "Water Ride" && item.type[1] == "Water Ride"){
+			else if (radios[i].value == "Water" && item.type[1] == "Water"){
 				radios[i].setAttribute("checked", "checked");
 			}
-			else if (radios[i].value == "Haunted House" && item.type[1] == "Haunted House"){
-				radios[i].setAttribute("checked", "checked");
-			}
-			else if (radios[i].value == "Train" && item.type[1] == "Train"){
+			else if (radios[i].value == "Haunted" && item.type[1] == "Haunted"){
 				radios[i].setAttribute("checked", "checked");
 			}
 			else if (radios[i].value == "Transport" && item.type[1] == "Transport"){
